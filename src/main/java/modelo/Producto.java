@@ -6,9 +6,9 @@ public class Producto {
     private String descripcion;
     private double precio;
     private int stock;
-    private String marca;
     private String categoria;
-
+    private String imagen;
+    
     public int getIdProducto() {
         return idProducto;
     }
@@ -31,14 +31,6 @@ public class Producto {
 
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
-    }
-
-    public String getMarca() {
-        return marca;
-    }
-
-    public void setMarca(String marca) {
-        this.marca = marca;
     }
 
     public String getCategoria() {
@@ -64,5 +56,13 @@ public class Producto {
     public void setStock(int stock) {
         this.stock = stock;
     }
+    
 
+    public String getImagen() {
+        return imagen;
+    }
+
+    public void setImagen(String imagen) {
+        this.imagen = imagen;
+    }
 }

@@ -32,6 +32,10 @@
         <servlet-name>AuthControl</servlet-name>
         <servlet-class>controlador.AuthControl</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>carritoControl</servlet-name>
+        <servlet-class>controlador.CarritoControl</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ClienteControl</servlet-name>
         <url-pattern>/ClienteControl</url-pattern>
@@ -63,6 +67,10 @@
     <servlet-mapping>
         <servlet-name>AuthControl</servlet-name>
         <url-pattern>/AuthControl</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>carritoControl</servlet-name>
+        <url-pattern>/carritoControl</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
