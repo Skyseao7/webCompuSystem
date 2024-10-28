@@ -104,7 +104,7 @@
                         <div class="col-lg-3 col-md-3 col-sm-3">
                             <form action="CarritoControl" method="get">
                             <div class="product__item">
-                                <div class="product__item__pic set-bg" data-setbg="${item.imagen}">
+                                <div class="product__item__pic set-bg" data-setbg="img/productos/${item.imagen}">
                                     <ul class="product__item__pic__hover">
                                         <button type="button" class="btn btn-sm">
                                             <li><a href="#"><i class="fa fa-heart"></i></a></li>

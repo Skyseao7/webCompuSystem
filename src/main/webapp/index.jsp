@@ -96,11 +96,11 @@
                 <div class="row justify-content-center">
                     <div class="col-lg-3 col-md-3 col-sm-6">
                         <div class="product__discount__item">
-                            <div class="product__discount__item__pic set-bg" data-setbg="img/product/discount/pd-1.jpg">
+                            <div class="product__discount__item__pic set-bg" data-setbg="img/productos/ofertas/pd-1.jpg">
                                 <div class="product__discount__percent">-15%</div>
                                 <ul class="product__item__pic__hover">
                                     <li><a href="#"><i class="fa fa-heart"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
+                                    <li><a href="productos.jsp"><i class="fa fa-shopping-cart"></i></a></li>
                                 </ul>
                             </div>
                             <div class="product__discount__item__text">
@@ -112,11 +112,11 @@
                     </div>
                     <div class="col-lg-3 col-md-3 col-sm-6">
                         <div class="product__discount__item">
-                            <div class="product__discount__item__pic set-bg" data-setbg="img/product/discount/pd-2.jpg">
+                            <div class="product__discount__item__pic set-bg" data-setbg="img/productos/ofertas/pd-2.jpg">
                                 <div class="product__discount__percent">-20%</div>
                                 <ul class="product__item__pic__hover">
                                     <li><a href="#"><i class="fa fa-heart"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
+                                    <li><a href="productos.jsp"><i class="fa fa-shopping-cart"></i></a></li>
                                 </ul>
                             </div>
                             <div class="product__discount__item__text">
@@ -128,11 +128,11 @@
                     </div>
                     <div class="col-lg-3 col-md-3 col-sm-6">
                         <div class="product__discount__item">
-                            <div class="product__discount__item__pic set-bg" data-setbg="img/product/discount/pd-3.jpg">
+                            <div class="product__discount__item__pic set-bg" data-setbg="img/productos/ofertas/pd-3.jpg">
                                 <div class="product__discount__percent">-20%</div>
                                 <ul class="product__item__pic__hover">
                                     <li><a href="#"><i class="fa fa-heart"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
+                                    <li><a href="productos.jsp"><i class="fa fa-shopping-cart"></i></a></li>
                                 </ul>
                             </div>
                             <div class="product__discount__item__text">
@@ -144,11 +144,11 @@
                     </div>
                     <div class="col-lg-3 col-md-3 col-sm-6">
                         <div class="product__discount__item">
-                            <div class="product__discount__item__pic set-bg" data-setbg="img/product/discount/pd-4.jpg">
+                            <div class="product__discount__item__pic set-bg" data-setbg="img/productos/ofertas/pd-4.jpg">
                                 <div class="product__discount__percent">-20%</div>
                                 <ul class="product__item__pic__hover">
                                     <li><a href="#"><i class="fa fa-heart"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
+                                    <li><a href="productos.jsp"><i class="fa fa-shopping-cart"></i></a></li>
                                 </ul>
                             </div>
                             <div class="product__discount__item__text">

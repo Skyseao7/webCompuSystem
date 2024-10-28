@@ -49,7 +49,7 @@
                                     <c:forEach items="${carrito}" var="item">
                                         <tr>
                                             <td class="shoping__cart__item">
-                                                <img src="${item.producto.imagen}" alt="${item.producto.pNombre}" style="width: 100px; height: auto;">
+                                                <img src="img/productos/${item.producto.imagen}" alt="${item.producto.pNombre}" style="width: 100px; height: auto;">
                                                 <span class="producto-nombre">${item.producto.pNombre}</span>
                                             </td>
                                             <td class="shoping__cart__price">

@@ -1,4 +1,5 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <nav>
     <!-- Header cel Begin -->
@@ -10,10 +11,10 @@
         <div class="humberger__menu__cart">
             <div class="header__cart">
                 <ul>
-                    <li><a href="#"><i class="fa fa-heart"></i> <span>0</span></a></li>
-                    <li><a href="CarritoControl?accion=listar"><i class="fa fa-shopping-bag"></i> <span>0</span></a></li>
+                    <li><a href="#"><i class="fa fa-heart"></i> <span>*</span></a></li>
+                    <li><a href="CarritoControl?accion=listar"><i class="fa fa-shopping-cart"></i> <span>*</span></a></li>
                 </ul>
-                <div class="header__cart__price">item: <span>s/0.00</span></div>
+                <div class="header__cart__price">item: <span>s./${total}</span></div>
             </div>
         </div>
         <div class="humberger__menu__widget">
@@ -23,12 +24,12 @@
         </div>
         <nav class="humberger__menu__nav mobile-menu">
             <ul>
-                <li><a href="./index.html">Inicio</a></li>
-                <li><a href="./shop-grid.html">Productos</a></li>
-                <li><a href="#">Información</a>
+                <li><a href="index.jsp">Inicio</a></li>
+                <li><a href="productos.jsp">Productos</a></li>
+                <li><a href="info.jsp">Información</a>
                     <ul class="header__menu__dropdown">
-                        <li><a href="./shop-details.html">Sobre nosotros</a></li>
-                        <li><a href="./shoping-cart.html">Ubicación</a></li>
+                        <li><a href="sobreNosotros.jsp">Sobre nosotros</a></li>
+                        <li><a href="ubicacion.jsp">Ubicación</a></li>
                         <li><a href="./checkout.html">Delivery</a></li>
                         <li><a href="./blog-details.html">Preguntas frecuentes</a></li>
                     </ul>
@@ -92,12 +93,12 @@
                 <div class="col-lg-6">
                     <nav class="header__menu">
                         <ul>
-                            <li><a href="./index.html">Inicio</a></li>
-                            <li><a href="./shop-grid.html">Productos</a></li>
+                            <li><a href="index.jsp">Inicio</a></li>
+                            <li><a href="productos.jsp">Productos</a></li>
                             <li><a href="#">Información</a>
                                 <ul class="header__menu__dropdown">
-                                    <li><a href="./shop-details.html">Sobre nosotros</a></li>
-                                    <li><a href="./shoping-cart.html">Ubicación</a></li>
+                                    <li><a href="sobreNosotros.jsp">Sobre nosotros</a></li>
+                                    <li><a href="ubicacion.jsp">Ubicación</a></li>
                                     <li><a href="./checkout.html">Delivery</a></li>
                                     <li><a href="./blog-details.html">Preguntas frecuentes</a></li>
                                 </ul>
@@ -110,10 +111,11 @@
                 <div class="col-lg-3">
                     <div class="header__cart">
                         <ul>
-                            <li><a href="#"><i class="fa fa-heart"></i> <span>0</span></a></li>
-                            <li><a href="CarritoControl?accion=listar"><i class="fa fa-shopping-bag"></i> <span>0</span></a></li>
+                            <li><a href="#"><i class="fa fa-heart"></i> <span>*</span></a></li>
+                            <li><a href="CarritoControl?accion=listar"><i class="fa fa-shopping-cart"></i> <span>*</span></a></li>
                         </ul>
-                        <div class="header__cart__price">item: <span>s/0.00</span></div>
+                        
+                        <div class="header__cart__price">items: <span>s./${total}</span></div>
                     </div>
                 </div>
             </div>
@@ -134,17 +136,17 @@
                             <span>Categorías</span>
                         </div>
                         <ul>
-                            <li><a href="#">Accesorios</a></li>
-                            <li><a href="#">Computo</a></li>
-                            <li><a href="#">Impresoras</a></li>
-                            <li><a href="#">Laptops</a></li>
-                            <li><a href="#">Monitores</a></li>
-                            <li><a href="#">Perifericos</a></li>
-                            <li><a href="#">Proyectores</a></li>
-                            <li><a href="#">Redes</a></li>
-                            <li><a href="#">Software</a></li>
-                            <li><a href="#">Piezas</a></li>
-                            <li><a href="#">Suministros</a></li>
+                            <li><a href="productos.jsp">Accesorios</a></li>
+                            <li><a href="productos.jsp">Computo</a></li>
+                            <li><a href="productos.jsp">Impresoras</a></li>
+                            <li><a href="productos.jsp">Laptops</a></li>
+                            <li><a href="productos.jsp">Monitores</a></li>
+                            <li><a href="productos.jsp">Perifericos</a></li>
+                            <li><a href="productos.jsp">Proyectores</a></li>
+                            <li><a href="productos.jsp">Redes</a></li>
+                            <li><a href="productos.jsp">Software</a></li>
+                            <li><a href="productos.jsp">Piezas</a></li>
+                            <li><a href="productos.jsp">Suministros</a></li>
                         </ul>
                     </div>
                 </div>
