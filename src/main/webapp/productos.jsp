@@ -102,22 +102,26 @@
                     <div class="row">
                         <c:forEach items="${producto}" var="item">
                         <div class="col-lg-3 col-md-3 col-sm-3">
+                            <form action="CarritoControl" method="get">
                             <div class="product__item">
                                 <div class="product__item__pic set-bg" data-setbg="${item.imagen}">
                                     <ul class="product__item__pic__hover">
                                         <button type="button" class="btn btn-sm">
                                             <li><a href="#"><i class="fa fa-heart"></i></a></li>
                                         </button>
-                                        <button type="button" class="btn btn-sm">
+                                        <button type="submit" class="btn btn-sm">
                                             <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
                                         </button>
                                     </ul>
                                 </div>
                                 <div class="product__item__text">
                                     <h6><a href="#">${item.pNombre}</a></h6>
+                                    <input type="hidden" name="accion" value="agregar">
+                                    <input type="hidden" name="id" value="${item.idProducto}">
                                     <h5>s./${item.precio}</h5>
                                 </div>
                             </div>
+                            </form>
                         </div>
                         </c:forEach>
                     </div>

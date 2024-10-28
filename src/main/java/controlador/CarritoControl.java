@@ -1,15 +1,22 @@
 package controlador;
 
+import dao.ProductoDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import modelo.*;
+import util.Carrito;
 
 public class CarritoControl extends HttpServlet {
-    
     private String PagListarCarrito = "PagCarrito.jsp";
+    private String PagInicio = "productos.jsp";
+    
+    private ProductoDAO prodDAO = new ProductoDAO();
+    private Carrito objCarrito = new Carrito();
     
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -20,6 +27,9 @@ public class CarritoControl extends HttpServlet {
             case "listar":
                 Listar(request, response);
                 break;
+            case "agregar":
+                Agregar(request, response);
+                break;
             default:
                 throw new AssertionError();
         }
@@ -29,7 +39,28 @@ public class CarritoControl extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         
+        ArrayList<DetallePedido> lista = objCarrito.ObtenerSesion(request);
+        request.setAttribute("carrito", lista);
+        request.setAttribute("total", objCarrito.ImporteTotal(lista));
         request.getRequestDispatcher(PagListarCarrito).forward(request, response);
+    }
+
+    
+    protected void Agregar(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        response.setContentType("text/html;charset=UTF-8");
+        int idProd = Integer.parseInt(request.getParameter("id"));
+        Producto obj = prodDAO.BuscarPorID(idProd);
+        
+        if(obj !=null){
+            DetallePedido objDet = new DetallePedido();
+            objDet.setProducto(obj);
+            objDet.setCantidad(1);
+            
+            objCarrito.AgregarCarrito(objDet, request);
+        }
+        
+        request.getRequestDispatcher(PagInicio).forward(request, response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
