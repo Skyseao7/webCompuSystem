@@ -12,7 +12,7 @@
             <div class="header__cart">
                 <ul>
                     <li><a href="#"><i class="fa fa-heart"></i> <span>*</span></a></li>
-                    <li><a href="CarritoControl?accion=listar"><i class="fa fa-shopping-cart"></i> <span>*</span></a></li>
+                    <li><a href="CarritoControl?accion=listar"><i class="fa fa-shopping-cart"></i> <span class="fw-bold">${sessionScope.carrito != null? sessionScope.carrito.size():0}</span></a></li>
                 </ul>
                 <div class="header__cart__price">item: <span>s./${total}</span></div>
             </div>
@@ -112,7 +112,7 @@
                     <div class="header__cart">
                         <ul>
                             <li><a href="#"><i class="fa fa-heart"></i> <span>*</span></a></li>
-                            <li><a href="CarritoControl?accion=listar"><i class="fa fa-shopping-cart"></i> <span>*</span></a></li>
+                            <li><a href="CarritoControl?accion=listar"><i class="fa fa-shopping-cart"></i> <span class="fw-bold">${sessionScope.carrito != null? sessionScope.carrito.size():0}</span></a></li>
                         </ul>
                         
                         <div class="header__cart__price">items: <span>s./${total}</span></div>

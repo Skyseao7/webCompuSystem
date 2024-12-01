@@ -46,7 +46,7 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <c:forEach items="${carrito}" var="item">
+                                    <c:forEach items="${carrito}" var="item" varStatus="loop">
                                         <tr>
                                             <td class="shoping__cart__item">
                                                 <img src="img/productos/${item.producto.imagen}" alt="${item.producto.pNombre}" style="width: 100px; height: auto;">
@@ -64,14 +64,17 @@
                                                 ${item.Importe()}
                                             </td>
                                             <td class="shoping__cart__item__close">
-                                                <span class="icon_close">
-                                                    <a href="#" title="Eliminar" class="btn-danger" btn-sm>
-
+                                                    <a href="CarritoControl?accion=eliminar&indice=${loop.index}" title="Eliminar" class="btn-danger" btn-sm>
+                                                        <i class="icon_close"></i>
                                                     </a>
-                                                </span>
                                             </td>
                                         </tr>
                                     </c:forEach>
+                                    <c:if test="${!(carrito !=null && carrito.size() > 0)}">
+                                        <tr class="text-center">
+                                            <td colspan="6">Carrito vacio!</td>
+                                        </tr>
+                                    </c:if>
                                 </tbody>
                             </table>
                         </div>
