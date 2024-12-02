@@ -7,7 +7,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>CompuSystem | Carrito</title>
+        <title>CompuSystem | Mis Pedidos</title>
 
         <!-- Google Font -->
         <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;900&display=swap" rel="stylesheet">
@@ -24,6 +24,10 @@
         <link rel="stylesheet" href="css/style.css" type="text/css">
     </head>
     <body>
+        <!-- Page Preloder -->
+        <div id="preloder">
+            <div class="loader"></div>
+        </div>
         <jsp:include page="components/Navegacion.jsp" />
         <jsp:include page="components/Mensaje.jsp"/>
 
@@ -36,43 +40,25 @@
                             <table>
                                 <thead>
                                     <tr>
-                                        <th class="shoping__product">Productos</th>
-                                        <th>Precio</th>
-                                        <th>Cantidad</th>
+                                        <th>#Pedido</th>
+                                        <th>Fecha</th>
                                         <th>Total</th>
-                                        <th></th>
+                                        <th>Estado</th>
+                                        <th>Detalle</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <c:forEach items="${carrito}" var="item" varStatus="loop">
+                                    <c:forEach items="${pedidos}" var="item">
                                         <tr>
-                                            <td class="shoping__cart__item">
-                                                <img src="img/productos/${item.producto.imagen}" alt="${item.producto.pNombre}" style="width: 100px; height: auto;">
-                                                <span class="producto-nombre">${item.producto.pNombre}</span>
-                                            </td>
-                                            <td class="shoping__cart__price">
-                                                s./${item.producto.precio}
-                                            </td>
-                                            <td class="shoping__cart__quantity">
-                                                <div class="quantity">
-                                                    ${item.cantidad}
-                                                </div>
-                                            </td>
-                                            <td class="shoping__cart__total">
-                                                ${item.Importe()}
-                                            </td>
-                                            <td class="shoping__cart__item__close">
-                                                    <a href="CarritoControl?accion=eliminar&indice=${loop.index}" title="Eliminar" class="btn-danger" btn-sm>
-                                                        <i class="icon_close"></i>
-                                                    </a>
+                                            <td>${item.idPedido}</td>
+                                            <td>${item.fecha}</td>
+                                            <td>${item.total}</td>
+                                            <td>${item.estado}</td>
+                                            <td>
+                                                <a href="#" class="btn btn-info btn-sm">Ver</a>
                                             </td>
                                         </tr>
                                     </c:forEach>
-                                    <c:if test="${!(carrito !=null && carrito.size() > 0)}">
-                                        <tr class="text-center">
-                                            <td colspan="6">Carrito vacio!</td>
-                                        </tr>
-                                    </c:if>
                                 </tbody>
                             </table>
                         </div>
@@ -85,21 +71,6 @@
                             <a href="productos.jsp" class="primary-btn cart-btn">CONTINUAR COMPRANDO</a>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <form action="PedidoControlador" method="post">
-                            <div class="shoping__checkout">
-                            <h5>RESUMEN DE COMPRA</h5>
-                            <ul>
-                                <li>TOTAL <span>s./${total}</span></li>
-                            </ul>
-                            <input type="hidden" name="accion" value="procesar">
-                            
-                            <button ${carrito.size()==0?'disabled':''} type="submit" class="btn btn-block btn-lg">
-                                <a href="PedidoControlador?accion=procesar" class="primary-btn">PROCESAR LA COMPRA</a>
-                            </button>
-                        </div>
-                        </form>
                     </div>
                 </div>
             </div>

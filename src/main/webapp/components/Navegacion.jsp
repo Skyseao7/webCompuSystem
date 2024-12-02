@@ -77,21 +77,21 @@
                                 <a href="#"><i class="fa fa-instagram"></i></a>
                                 <a href="#"><i class="fa fa-twitter"></i></a>
                             </div>
-                            
+
                             <c:if test="${sessionScope.usuario == null}">
-                            <div class="header__top__right__social">
+                                <div class="header__top__right__social">
                                     <a href="AuthControlador?accion=login"><i class="fa fa-user"></i>  Acceder</a>
-                            </div>
-                            <div class="header__top__right__social">
+                                </div>
+                                <div class="header__top__right__social">
                                     <a href="ClienteControlador?accion=nuevo"><i class="fa fa-user"></i>  Registrarse </a>
-                            </div>
-                                </c:if>
+                                </div>
+                            </c:if>
                             <c:if test="${sessionScope.usuario != null}">
-                            <div class="header__top__right__social">
-                                <span>${sessionScope.usuario.nombresCompletos()}</span>
-                            </div>
-                            <div class="header__top__right__social">
-                                <a href="AuthControlador?accion=logout">Cerrar Sesión </a>
+                                <div class="header__top__right__social">
+                                    <span>${sessionScope.usuario.nombresCompletos()}</span>
+                                </div>
+                                <div class="header__top__right__social">
+                                    <a href="AuthControlador?accion=logout">Cerrar Sesión </a>
                                 </c:if>
                             </div>
                         </div>
@@ -125,13 +125,19 @@
                     </nav>
                 </div>
                 <div class="col-lg-3">
-                    <div class="header__cart">
+                    <div class="header__cart" >
                         <ul>
                             <li><a href="#"><i class="fa fa-heart"></i> <span>*</span></a></li>
                             <li><a href="CarritoControl?accion=listar"><i class="fa fa-shopping-cart"></i> <span class="fw-bold">${sessionScope.carrito != null? sessionScope.carrito.size():0}</span></a></li>
                         </ul>
-                        
-                        <div class="header__cart__price">items: <span>s./${total}</span></div>
+                        <div class="header__cart__price" >
+                        <c:if test="${sessionScope.usuario != null}">
+                            <ul>
+                                <li><a style="color:black" href="PedidoControlador?accion=mis_pedidos"><i class="fa fa-receipt"></i>Mis pedidos</a></li>
+                            </ul>
+                        </c:if>
+                        </div>
+                        <div class="header__cart__price"><span>s./${total}</span></div>
                     </div>
                 </div>
             </div>

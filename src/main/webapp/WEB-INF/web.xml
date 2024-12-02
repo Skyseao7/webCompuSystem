@@ -44,6 +44,10 @@
         <servlet-name>AuthControlador</servlet-name>
         <servlet-class>controlador.AuthControlador</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>PedidoControlador</servlet-name>
+        <servlet-class>controlador.PedidoControlador</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ClienteControl</servlet-name>
         <url-pattern>/ClienteControl</url-pattern>
@@ -87,6 +91,10 @@
     <servlet-mapping>
         <servlet-name>AuthControlador</servlet-name>
         <url-pattern>/AuthControlador</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>PedidoControlador</servlet-name>
+        <url-pattern>/PedidoControlador</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

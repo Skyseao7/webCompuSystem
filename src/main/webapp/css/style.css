@@ -301,6 +301,12 @@ ol {
     margin-right: 35px;
 }
 
+.header__top__right__social {
+    position: relative;
+    display: inline-block;
+    margin-right: 35px;
+}
+
 .header__top__right__social:after {
     position: absolute;
     right: -20px;
@@ -495,16 +501,18 @@ ol {
 .header__cart {
     text-align: right;
     padding: 24px 0;
+    display: inline-flex;
+    text-decoration: none;
 }
 
 .header__cart ul {
-    display: inline-block;
+    display: inline-flex;
     margin-right: 25px;
 }
 
 .header__cart ul li {
     list-style: none;
-    display: inline-block;
+    display: inline-flex;
     margin-right: 15px;
 }
 
@@ -514,6 +522,8 @@ ol {
 
 .header__cart ul li a {
     position: relative;
+    text-decoration: none;
+    
 }
 
 .header__cart ul li a i {
@@ -540,7 +550,7 @@ ol {
 .header__cart .header__cart__price {
     font-size: 14px;
     color: #6f6f6f;
-    display: inline-block;
+    display: inline-flex;
 }
 
 .header__cart .header__cart__price span {
