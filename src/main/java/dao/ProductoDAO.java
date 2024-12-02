@@ -17,7 +17,7 @@ public class ProductoDAO {
             cn = Conexion.getConexion();
             String sql = "select*from producto";
             st = cn.prepareStatement(sql);
-            rs = st.executeQuery();
+            rs = st.executeQuery(); //ps
             while (rs.next()) {
                 Producto obj = new Producto();
                 obj.setIdProducto(rs.getInt("id_producto"));

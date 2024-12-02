@@ -36,6 +36,10 @@
         <servlet-name>carritoControl</servlet-name>
         <servlet-class>controlador.CarritoControl</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ClienteControlador</servlet-name>
+        <servlet-class>controlador.ClienteControlador</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ClienteControl</servlet-name>
         <url-pattern>/ClienteControl</url-pattern>
@@ -71,6 +75,10 @@
     <servlet-mapping>
         <servlet-name>carritoControl</servlet-name>
         <url-pattern>/carritoControl</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ClienteControlador</servlet-name>
+        <url-pattern>/ClienteControlador</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

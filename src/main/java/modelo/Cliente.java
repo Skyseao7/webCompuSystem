@@ -5,11 +5,10 @@ public class Cliente {
     private int idCliente;
     private String nombre;
     private String apellido;
+    private String telefono;
     private String correo;
     private String direccion;
-    private String telefono;
     private String password;
-    private String fechaRegistro;
     
     public Cliente() {
     }
@@ -68,14 +67,6 @@ public class Cliente {
 
     public void setTelefono(String telefono) {
         this.telefono = telefono;
-    }
-    
-    public String getFechaRegistro() {
-        return fechaRegistro;
-    }
-
-    public void setFechaRegistro(String fechaRegistro) {
-        this.fechaRegistro = fechaRegistro;
     }
 
     public String getPassword() {

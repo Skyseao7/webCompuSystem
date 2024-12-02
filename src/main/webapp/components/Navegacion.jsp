@@ -19,7 +19,7 @@
         </div>
         <div class="humberger__menu__widget">
             <div class="header__top__right__auth">
-                <a href="#"><i class="fa fa-user"></i> Login</a>
+                <a href="ClienteControlador?accion=nuevo"><i class="fa fa-user"></i> Acceder |   Registrarse </a>
             </div>
         </div>
         <nav class="humberger__menu__nav mobile-menu">
@@ -76,7 +76,7 @@
                                 <a href="#"><i class="fa fa-twitter"></i></a>
                             </div>
                             <div class="header__top__right__auth">
-                                <a href="#"><i class="fa fa-user"></i> Login</a>
+                                <a href="ClienteControlador?accion=nuevo"><i class="fa fa-user"></i> Acceder |   Registrarse </a>
                             </div>
                         </div>
                     </div>
