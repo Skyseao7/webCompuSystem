@@ -5,31 +5,10 @@ import java.util.ArrayList;
 public class Pedido {
     private int idPedido;
     private Cliente cliente;
-    private String fechaPedido;
+    private double total;
+    private String fecha;
     private String estado;
-    private ArrayList<DetallePedido> detalles = new ArrayList<>();
-    private Pago pago;
-
-    public Pedido() {
-        cliente = new Cliente();
-    }
-
-    
-    public ArrayList<DetallePedido> getDetalles() {
-        return detalles;
-    }
-
-    public void setDetalles(ArrayList<DetallePedido> detalles) {
-        this.detalles = detalles;
-    }
-
-    public Pago getPago() {
-        return pago;
-    }
-
-    public void setPago(Pago pago) {
-        this.pago = pago;
-    }
+    private ArrayList<DetallePedido> detalles;
 
     public int getIdPedido() {
         return idPedido;
@@ -47,12 +26,20 @@ public class Pedido {
         this.cliente = cliente;
     }
 
-    public String getFechaPedido() {
-        return fechaPedido;
+    public double getTotal() {
+        return total;
     }
 
-    public void setFechaPedido(String fechaPedido) {
-        this.fechaPedido = fechaPedido;
+    public void setTotal(double total) {
+        this.total = total;
+    }
+
+    public String getFecha() {
+        return fecha;
+    }
+
+    public void setFecha(String fecha) {
+        this.fecha = fecha;
     }
 
     public String getEstado() {
@@ -63,9 +50,13 @@ public class Pedido {
         this.estado = estado;
     }
 
-    
-    @Override
-    public String toString() {
-        return "Pedido{" + "idPedido=" + idPedido + ", cliente=" + cliente + ", fechaPedido=" + fechaPedido + ", estado=" + estado + ", detalles=" + detalles + ", pago=" + pago + '}';
+    public ArrayList<DetallePedido> getDetalles() {
+        return detalles;
     }
+
+    public void setDetalles(ArrayList<DetallePedido> detalles) {
+        this.detalles = detalles;
+    }
+    
+    
 }

@@ -20,7 +20,7 @@
         </div>
         <div class="humberger__menu__widget">
             <div class="header__top__right__auth">
-                <a href="AuthControlador?accion=login"><i class="fa fa-user"></i> Acceder |   </a>
+                <a href="AuthControlador?accion=login"><i class="fa fa-user"></i> Acceder</a>
                 <a href="ClienteControlador?accion=nuevo"><i class="fa fa-user"></i> Registrarse </a>
             </div>
         </div>
@@ -70,25 +70,28 @@
                         </div>
                     </div>
                     <div class="col-lg-6 col-md-6">
-                        <div class="header__top__right">
+                        <div class="header__top__right style="display:inline-flex">
                             <div class="header__top__right__social">
                                 <a href="#"><i class="fa fa-whatsapp"></i></a>
                                 <a href="#"><i class="fa fa-facebook"></i></a>
                                 <a href="#"><i class="fa fa-instagram"></i></a>
                                 <a href="#"><i class="fa fa-twitter"></i></a>
                             </div>
-                            <div class="header__top__right__auth">
-                                <c:if test="${sessionScope.usuario == null}">
-                                    <a href="AuthControlador?accion=login"><i class="fa fa-user"></i> Acceder |   </a>
-                                    &nbsp;
-                                    <a href="ClienteControlador?accion=nuevo">Registrarse </a>
+                            
+                            <c:if test="${sessionScope.usuario == null}">
+                            <div class="header__top__right__social">
+                                    <a href="AuthControlador?accion=login"><i class="fa fa-user"></i>  Acceder</a>
+                            </div>
+                            <div class="header__top__right__social">
+                                    <a href="ClienteControlador?accion=nuevo"><i class="fa fa-user"></i>  Registrarse </a>
+                            </div>
                                 </c:if>
-                                <c:if test="${sessionScope.usuario != null}">
-                                    <span>${sessionScope.usuario.nombresCompletos()}</span>
-                                    &nbsp;
-                                    <a href="AuthControlador?accion=logout">
-                                        <i class="fa fa-sign-out-alt"></i> Cerrar Sesión
-                                    </a>
+                            <c:if test="${sessionScope.usuario != null}">
+                            <div class="header__top__right__social">
+                                <span>${sessionScope.usuario.nombresCompletos()}</span>
+                            </div>
+                            <div class="header__top__right__social">
+                                <a href="AuthControlador?accion=logout">Cerrar Sesión </a>
                                 </c:if>
                             </div>
                         </div>
