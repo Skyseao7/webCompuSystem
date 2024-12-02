@@ -1,5 +1,6 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <!DOCTYPE html>
 <nav>
     <!-- Header cel Begin -->
@@ -19,7 +20,8 @@
         </div>
         <div class="humberger__menu__widget">
             <div class="header__top__right__auth">
-                <a href="ClienteControlador?accion=nuevo"><i class="fa fa-user"></i> Acceder |   Registrarse </a>
+                <a href="AuthControlador?accion=login"><i class="fa fa-user"></i> Acceder |   </a>
+                <a href="ClienteControlador?accion=nuevo"><i class="fa fa-user"></i> Registrarse </a>
             </div>
         </div>
         <nav class="humberger__menu__nav mobile-menu">
@@ -76,7 +78,18 @@
                                 <a href="#"><i class="fa fa-twitter"></i></a>
                             </div>
                             <div class="header__top__right__auth">
-                                <a href="ClienteControlador?accion=nuevo"><i class="fa fa-user"></i> Acceder |   Registrarse </a>
+                                <c:if test="${sessionScope.usuario == null}">
+                                    <a href="AuthControlador?accion=login"><i class="fa fa-user"></i> Acceder |   </a>
+                                    &nbsp;
+                                    <a href="ClienteControlador?accion=nuevo">Registrarse </a>
+                                </c:if>
+                                <c:if test="${sessionScope.usuario != null}">
+                                    <span>${sessionScope.usuario.nombresCompletos()}</span>
+                                    &nbsp;
+                                    <a href="AuthControlador?accion=logout">
+                                        <i class="fa fa-sign-out-alt"></i> Cerrar Sesión
+                                    </a>
+                                </c:if>
                             </div>
                         </div>
                     </div>

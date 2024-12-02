@@ -41,13 +41,14 @@
                 </form>
             </div>
             <div class="form-container sign-in-container">
-                <form action="#">
+                <form action="AuthControlador" method="post">
                     <h1>Accede a tu cuenta</h1>
                     <span>Usa tu correo</span>
-                    <input type="email" placeholder="Correo" />
-                    <input type="password" placeholder="Contraseña" />
+                    <input type="email" required="" name="correo" placeholder="Correo*" />
+                    <input type="password" required="" name="password" placeholder="Contraseña*" />
                     <a href="#">Olvidaste tu contraseña?</a>
-                    <button>Acceder</button>
+                    <input type="hidden" name="accion" value="autentificarse"/>
+                    <button type="submit">Acceder</button>
                 </form>
             </div>
             <div class="overlay-container">

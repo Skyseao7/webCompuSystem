@@ -10,6 +10,10 @@ public class Cliente {
     private String direccion;
     private String password;
     
+    public String nombresCompletos(){
+        return (nombre+" "+apellido).toUpperCase();
+    }
+    
     public Cliente() {
     }
     
