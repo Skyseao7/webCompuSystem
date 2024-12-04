@@ -10,6 +10,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import modelo.DetallePedido;
 import modelo.Pedido;
+import modelo.Producto;
 import util.Conexion;
 
 public class PedidoDAO {
@@ -81,7 +82,7 @@ public class PedidoDAO {
         Connection cn = null;
         PreparedStatement st = null;
         ResultSet rs = null;
-        
+
         ArrayList<Pedido> lista = new ArrayList<>();
         try {
             cn = Conexion.getConexion();
@@ -89,15 +90,61 @@ public class PedidoDAO {
             st = cn.prepareStatement(sql);
             st.setInt(1, id);
             rs = st.executeQuery();
-            
-            while(rs.next()){
+
+            while (rs.next()) {
                 Pedido obj = new Pedido();
                 obj.setIdPedido(rs.getInt("id_pedido"));
                 obj.setFecha(rs.getString("fecha_pedido"));
                 obj.setTotal(rs.getDouble("monto"));
                 obj.setEstado(rs.getString("estado_pedido"));
-                
+                obj.setDetalles(ListarDetallePorIdPed(obj.getIdPedido()));
                 lista.add(obj);
+            }
+
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        } finally {
+            try {
+                if (cn != null) {
+                    cn.close();
+                }
+                if (st != null) {
+                    st.close();
+                }
+                if (rs != null) {
+                    rs.close();
+                }
+            } catch (Exception ex) {
+
+            }
+        }
+        return lista;
+    }
+
+    public ArrayList<DetallePedido> ListarDetallePorIdPed(int idPed) {
+        ArrayList<DetallePedido> lista = new ArrayList<>();
+        Connection cn = null;
+        PreparedStatement st = null;
+        ResultSet rs = null;
+        try {
+            cn = Conexion.getConexion();
+            String sql = "SELECT p.imagen , p.p_nombre , d.precio, d.cantidad\n"
+                    + "FROM `detalle_pedido` d INNER JOIN producto p ON p.id_producto = d.id_producto\n"
+                    + "WHERE d.id_pedido = ?;";
+            
+            st = cn.prepareStatement(sql);
+            st.setInt(1, idPed);
+            rs = st.executeQuery();
+            while(rs.next()){
+                Producto p = new Producto();
+                DetallePedido d = new DetallePedido();
+                
+                p.setImagen(rs.getString("imagen"));
+                p.setpNombre(rs.getString("p_nombre"));
+                p.setPrecio(rs.getDouble("precio"));
+                d.setCantidad(rs.getInt("cantidad"));
+                d.setProducto(p);
+                lista.add(d);
             }
             
         } catch (Exception ex) {

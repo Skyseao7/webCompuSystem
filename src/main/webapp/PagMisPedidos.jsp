@@ -21,13 +21,12 @@
         <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
         <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+        
         <link rel="stylesheet" href="css/style.css" type="text/css">
     </head>
+    
     <body>
-        <!-- Page Preloder -->
-        <div id="preloder">
-            <div class="loader"></div>
-        </div>
         <jsp:include page="components/Navegacion.jsp" />
         <jsp:include page="components/Mensaje.jsp"/>
 
@@ -55,7 +54,60 @@
                                             <td>${item.total}</td>
                                             <td>${item.estado}</td>
                                             <td>
-                                                <a href="#" class="btn btn-info btn-sm">Ver</a>
+                                                <button type="button" class="btn btn-info btn-sm" data-bs-toggle="modal" 
+                                                        data-bs-target="#modalDetalle_${item.idPedido}" style="color:#ffffff; background-color: #7fad39">
+                                                    Ver
+                                                </button>
+
+                                                <div class="modal fade" id="modalDetalle_${item.idPedido}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                    <div class="modal-dialog modal-xl">
+                                                        <div class="modal-content">
+                                                            <div class="modal-header">
+                                                                <h1 class="modal-title fs-5" style="color: white; font-size: 50px" >* Pedido #0${item.idPedido}</h1>
+                                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                            </div>
+                                                            <div class="modal-body">
+                                                                <table>
+                                                                    <thead>
+                                                                        <tr>
+                                                                            <th>Imagen</th>
+                                                                            <th>Producto</th>
+                                                                            <th>Precio</th>
+                                                                            <th>Cantidad</th>
+                                                                            <th>Total</th>
+                                                                        </tr>
+                                                                    </thead>
+                                                                    <tbody>
+                                                                        <c:forEach items="${item.detalles}" var="detalle">
+                                                                            <tr>
+                                                                                <td>
+                                                                                    <img src="img/productos/${detalle.producto.imagen}" alt="${detalle.producto.pNombre}" style="width: 100px; height: auto;">
+                                                                                </td>
+                                                                                <td>
+                                                                                    ${detalle.producto.pNombre}
+                                                                                </td>
+                                                                                <td>
+                                                                                    s./${detalle.producto.precio}
+                                                                                </td>
+                                                                                <td>
+                                                                                    <div class="quantity">
+                                                                                        ${detalle.cantidad}
+                                                                                    </div>
+                                                                                </td>
+                                                                                <td>
+                                                                                    ${detalle.Importe()}
+                                                                                </td>
+                                                                            </tr>
+                                                                        </c:forEach>
+                                                                    </tbody>
+                                                                </table>
+                                                            </div>
+                                                            <div class="modal-footer">
+                                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" style="background-color: #7fad39">Cerrar</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </td>
                                         </tr>
                                     </c:forEach>
@@ -68,7 +120,7 @@
                     <div class="col-lg-6">
                         <div class="shoping__continue">
                             <div class="shoping__cart__btns">
-                            <a href="productos.jsp" class="primary-btn cart-btn">CONTINUAR COMPRANDO</a>
+                                <a href="productos.jsp" class="primary-btn cart-btn">CONTINUAR COMPRANDO</a>
                             </div>
                         </div>
                     </div>
@@ -89,5 +141,7 @@
         <script src="js/mixitup.min.js"></script>
         <script src="js/owl.carousel.min.js"></script>
         <script src="js/main.js"></script>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     </body>
 </html>
