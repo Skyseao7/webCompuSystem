@@ -39,7 +39,7 @@
                             <table>
                                 <thead>
                                     <tr>
-                                        <th>#Pedido</th>
+                                        <th>ID Pedido</th>
                                         <th>Fecha</th>
                                         <th>Total</th>
                                         <th>Estado</th>
@@ -49,7 +49,7 @@
                                 <tbody>
                                     <c:forEach items="${pedidos}" var="item">
                                         <tr>
-                                            <td>${item.idPedido}</td>
+                                            <td>PED-${item.idPedido}</td>
                                             <td>${item.fecha}</td>
                                             <td>${item.total}</td>
                                             <td>${item.estado}</td>

@@ -48,6 +48,10 @@
         <servlet-name>PedidoControlador</servlet-name>
         <servlet-class>controlador.PedidoControlador</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>generaQr</servlet-name>
+        <servlet-class>controlador.generaQr</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ClienteControl</servlet-name>
         <url-pattern>/ClienteControl</url-pattern>
@@ -95,6 +99,10 @@
     <servlet-mapping>
         <servlet-name>PedidoControlador</servlet-name>
         <url-pattern>/PedidoControlador</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>generaQr</servlet-name>
+        <url-pattern>/generaQr</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

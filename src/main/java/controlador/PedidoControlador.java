@@ -17,7 +17,7 @@ public class PedidoControlador extends HttpServlet {
 
     private PedidoDAO pedidoDao = new PedidoDAO();
     private Carrito objCarrito = new Carrito();
-    
+
     private final String pagLogin = "PagRegistrarCliente.jsp";
     private final String pagCarrito = "PagCarrito.jsp";
     private final String pagMisPedidos = "PagMisPedidos.jsp";
@@ -43,13 +43,13 @@ public class PedidoControlador extends HttpServlet {
     protected void MisPedidos(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        
+
         if (request.getSession().getAttribute("usuario") != null) {
             Cliente objCli = (Cliente) request.getSession().getAttribute("usuario");
             ArrayList<Pedido> listaPed = pedidoDao.ListarPorIdCliente(objCli.getIdCliente());
             request.setAttribute("pedidos", listaPed);
             request.getRequestDispatcher(pagMisPedidos).forward(request, response);
-        }else{
+        } else {
             request.getRequestDispatcher(pagLogin).forward(request, response);
         }
     }
@@ -62,6 +62,7 @@ public class PedidoControlador extends HttpServlet {
             Pedido objPed = new Pedido();
             Cliente objCli = (Cliente) request.getSession().getAttribute("usuario");
             ArrayList<DetallePedido> lista = objCarrito.ObtenerSesion(request);
+
             double total = objCarrito.ImporteTotal(lista);
 
             objPed.setCliente(objCli);
@@ -72,9 +73,20 @@ public class PedidoControlador extends HttpServlet {
             int result = pedidoDao.GenerarPedido(objPed);
 
             if (result > 0) {
+                // Limpiar el carrito de la sesión
                 objCarrito.GuardarSesion(request, new ArrayList<DetallePedido>());
-                request.getSession().setAttribute("success", "Pedido procesado de forma correcta.");
-                response.sendRedirect("PedidoControlador?accion=mis_pedidos");
+                // Generar factura o identificación del pedido
+                String factura = "PED-" + objPed.getIdPedido();
+
+                // Construir el mensaje para el QR
+                String resultado = "Gracias por su compra " + objCli.getNombre() + ", " + objCli.getApellido();
+                resultado += "\nFactura generada: " + factura;
+                resultado += "\nTotal a pagar: " + total;
+
+                // Redirigir al JSP que genera el QR
+                request.setAttribute("qrData", resultado); // Pasar los datos al JSP
+                request.getRequestDispatcher("generaQr.jsp").forward(request, response);
+
             } else {
                 request.getSession().setAttribute("error", "No se pudo procesar el pedido.");
                 request.getRequestDispatcher(pagCarrito).forward(request, response);
