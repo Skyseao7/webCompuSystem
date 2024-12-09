@@ -36,7 +36,7 @@
                     </ul>
                 </li>
                 <li><a href="blog.jsp">Blog</a></li>
-                <li><a href="./contact.html">Soporte técnico</a></li>
+                <li><a href="soporteTec.jsp">Soporte técnico</a></li>
             </ul>
         </nav>
         <div id="mobile-menu-wrap"></div>
@@ -118,7 +118,7 @@
                                 </ul>
                             </li>
                             <li><a href="blog.jsp">Blog</a></li>
-                            <li><a href="./contact.html">Soporte técnico</a></li>
+                            <li><a href="soporteTec.jsp">Soporte técnico</a></li>
                         </ul>
                     </nav>
                 </div>
