@@ -32,8 +32,7 @@
                     <ul class="header__menu__dropdown">
                         <li><a href="sobreNosotros.jsp">Sobre nosotros</a></li>
                         <li><a href="ubicacion.jsp">Ubicación</a></li>
-                        <li><a href="./checkout.html">Delivery</a></li>
-                        <li><a href="./blog-details.html">Preguntas frecuentes</a></li>
+                        <li><a href="preguntasFrec.jsp">Preguntas frecuentes</a></li>
                     </ul>
                 </li>
                 <li><a href="./blog.html">Blog</a></li>
@@ -115,8 +114,7 @@
                                 <ul class="header__menu__dropdown">
                                     <li><a href="sobreNosotros.jsp">Sobre nosotros</a></li>
                                     <li><a href="ubicacion.jsp">Ubicación</a></li>
-                                    <li><a href="./checkout.html">Delivery</a></li>
-                                    <li><a href="./blog-details.html">Preguntas frecuentes</a></li>
+                                    <li><a href="preguntasFrec.jsp">Preguntas frecuentes</a></li>
                                 </ul>
                             </li>
                             <li><a href="./blog.html">Blog</a></li>
