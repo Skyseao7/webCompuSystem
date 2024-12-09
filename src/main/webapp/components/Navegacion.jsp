@@ -35,7 +35,7 @@
                         <li><a href="preguntasFrec.jsp">Preguntas frecuentes</a></li>
                     </ul>
                 </li>
-                <li><a href="./blog.html">Blog</a></li>
+                <li><a href="blog.jsp">Blog</a></li>
                 <li><a href="./contact.html">Soporte técnico</a></li>
             </ul>
         </nav>
@@ -117,7 +117,7 @@
                                     <li><a href="preguntasFrec.jsp">Preguntas frecuentes</a></li>
                                 </ul>
                             </li>
-                            <li><a href="./blog.html">Blog</a></li>
+                            <li><a href="blog.jsp">Blog</a></li>
                             <li><a href="./contact.html">Soporte técnico</a></li>
                         </ul>
                     </nav>
